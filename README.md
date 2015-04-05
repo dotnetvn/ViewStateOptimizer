@@ -28,7 +28,8 @@ In order to configure to store the ViewState contents in the files on the server
 		<controlAdapters>
 			<adapter
                 controlType="System.Web.UI.Page"
-                adapterType="ViewStateOptimizer.FileStorage.FileViewStateOptimizerPageAdapter" />
+                adapterType="ViewStateOptimizer.FileStorage.FileViewStateOptimizerPageAdapter"
+                />
 		</controlAdapters>
 	</browser>
 </browsers>

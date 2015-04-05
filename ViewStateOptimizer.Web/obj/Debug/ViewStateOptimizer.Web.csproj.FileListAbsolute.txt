@@ -1,0 +1,8 @@
+D:\projects\ViewStateOptimizer\ViewStateOptimizer.Web\bin\ViewStateOptimizer.Web.dll.config
+D:\projects\ViewStateOptimizer\ViewStateOptimizer.Web\bin\ViewStateOptimizer.Web.dll
+D:\projects\ViewStateOptimizer\ViewStateOptimizer.Web\bin\ViewStateOptimizer.Web.pdb
+D:\projects\ViewStateOptimizer\ViewStateOptimizer.Web\bin\ViewStateOptimizer.dll
+D:\projects\ViewStateOptimizer\ViewStateOptimizer.Web\bin\ViewStateOptimizer.pdb
+D:\projects\ViewStateOptimizer\ViewStateOptimizer.Web\obj\Debug\ViewStateOptimizer.Web.csprojResolveAssemblyReference.cache
+D:\projects\ViewStateOptimizer\ViewStateOptimizer.Web\obj\Debug\ViewStateOptimizer.Web.dll
+D:\projects\ViewStateOptimizer\ViewStateOptimizer.Web\obj\Debug\ViewStateOptimizer.Web.pdb

@@ -2,4 +2,3 @@ D:\projects\ViewStateOptimizer\ViewStateOptimizer\bin\Debug\ViewStateOptimizer.d
 D:\projects\ViewStateOptimizer\ViewStateOptimizer\bin\Debug\ViewStateOptimizer.pdb
 D:\projects\ViewStateOptimizer\ViewStateOptimizer\obj\Debug\ViewStateOptimizer.dll
 D:\projects\ViewStateOptimizer\ViewStateOptimizer\obj\Debug\ViewStateOptimizer.pdb
-D:\projects\ViewStateOptimizer\ViewStateOptimizer\obj\Debug\ViewStateOptimizer.csprojResolveAssemblyReference.cache

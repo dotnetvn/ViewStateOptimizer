@@ -46,13 +46,16 @@
 			}
 		}
 
-		protected override PageStatePersister PageStatePersister
+		// --- NOTES:
+		// --- Configure here for the Page level.
+		// --- Please configure the global using Page Adapters.
+		/*protected override PageStatePersister PageStatePersister
 		{
 			get
 			{
 				return new FileViewStateOptimizer(Page);
 			}
-		}
+		}*/
 
 		protected void btnSubmit1_Click(object sender, EventArgs e)
 		{

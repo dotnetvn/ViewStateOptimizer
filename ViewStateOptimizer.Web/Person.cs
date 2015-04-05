@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace ViewStateOptimizer.Web
+﻿namespace ViewStateOptimizer.Web
 {
+	using System;
+
 	[Serializable]
 	public class Person
 	{

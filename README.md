@@ -1,3 +1,46 @@
 # ViewStateOptimizer
 The ViewStateOptimizer is a .NET library used to optimize the ViewState problem for the asp.net web forms platform. It will include a set of the best methods to improve the performance for the asp.net web forms when using ViewState.
 ![ViewStateOptimizer Class Diagram](http://i.imgur.com/GWFr1jO.png "ViewStateOptimizer Class Diagram")
+
+### ViewState Performance
+Basically, the ViewState data is stored in the hidden field and will be sent the roundtrip between the server and the client. If you use many asp.net server controls, the ViewState size will become bigger. So, we store the ViewState data in the hidden field which can bring us some following disadvantages:
+* Increase the bandwidth cost.
+* Risk about the ViewState data security.
+* Make our website quite lower.
+
+For this library, we can use an another solution to optimize the ViewState data that we can store the ViewState data in the files on the server-side. This helps us to decrease the bandwidth cost, restrict the risk about the ViewState data and make our website faster than.
+
+### Install and Requirements
+In order to use this library, your application needs to meet these following criterias:
+* Use for the asp.net web forms applications.
+* Require the .NET Framework 2.0 or higher.
+
+If okay, then you can install it directly via following ways:
+* Via Nuget: ``` Install-Package ViewStateOptimizer ```
+* Via Github: ``` git clone https://github.com/congdongdotnet/ViewStateOptimizer.git ```
+
+### Samples
+#####Store the ViewState contents in the files using FileViewStateOptimizer class
+In order to configure to store the ViewState contents in the files on the server-side, you only need to create a new browser file named __vso-browser.browser__ under the App_Browsers folder and then add the following contents into that browser file:
+```xml
+<browsers>
+	<browser refID="Default">
+		<controlAdapters>
+			<adapter
+                controlType="System.Web.UI.Page"
+                adapterType="ViewStateOptimizer.FileStorage.FileViewStateOptimizerPageAdapter" />
+		</controlAdapters>
+	</browser>
+</browsers>
+```
+
+### Bugs and Issues
+If any issue or bug, please push a new issue [here](https://github.com/congdongdotnet/ViewStateOptimizer/issues).
+
+### Release Notes
+* 1.0.0:.
+    * Optimize the ViewState performance by storing the ViewState contents in the files on the server-side.
+    * Support the session page adapter for configuring the SessionPageStatePersister.
+
+### Copyright and License
+Copyright 2015 by CongDongDotNet - MIT License

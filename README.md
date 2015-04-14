@@ -69,7 +69,7 @@ Starting from the 1.0.1 version, we will have to configure above options via web
 			viewStatePrefixValue="_vso"/>
 	</viewStateOptimizer>
 	...
-</configuration
+</configuration>
 ```
 
 ### Bugs and Issues

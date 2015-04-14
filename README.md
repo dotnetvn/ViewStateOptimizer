@@ -58,13 +58,15 @@ Starting from the 1.0.1 version, we will have to configure above options via web
 	...
 	<configSections>
 		...
-		<section name="viewStateOptimizer" type="ViewStateOptimizer.ViewStateOptimizerConfigurationSection"/>
+		<section name="viewStateOptimizer" type="ViewStateOptimizer
+								.ViewStateOptimizerConfigurationSection"/>
 		...
 	</configSections>
 	...
 	<viewStateOptimizer type="FileStorage">
 		<fileStorageViewStateOptimizer viewStateKey="_ViewStateOptimizer"  
-	viewStateStorageRelativeFolder="~/ViewStateOptimizer/VsFiles" viewStatePrefixValue="_vso"/>
+			viewStateStorageRelativeFolder="~/ViewStateOptimizer/VsFiles"
+			viewStatePrefixValue="_vso"/>
 	</viewStateOptimizer>
 	...
 </configuration

@@ -20,19 +20,35 @@ If okay, then you can install it directly via following ways:
 * Via Github: ``` git clone https://github.com/congdongdotnet/ViewStateOptimizer.git ```
 
 ### Samples
-#####Store the ViewState contents in the files using FileViewStateOptimizer class
+#####[File Storage] Store the ViewState contents in the files using FileViewStateOptimizer class
 In order to configure to store the ViewState contents in the files on the server-side, you only need to create a new browser file named __vso-browser.browser__ under the App_Browsers folder and then add the following contents into that browser file:
 ```xml
 <browsers>
 	<browser refID="Default">
 		<controlAdapters>
-			<adapter
-                controlType="System.Web.UI.Page"
-                adapterType="ViewStateOptimizer.FileStorage.FileViewStateOptimizerPageAdapter"
-                />
+			<adapter controlType="System.Web.UI.Page"
+            			 adapterType="ViewStateOptimizer.FileStorage
+            			 	.FileViewStateOptimizerPageAdapter"/>
 		</controlAdapters>
 	</browser>
 </browsers>
+```
+Basically, the ViewState data will be configured with three following options in the static class __FileViewStateOptimizerOptions__:
+* ViewStateStorageRelativeFolder = "~/App_Data/VsFiles": this option used to configure the relative folder to store the ViewState contents on the server-side.
+* ViewStateKey = "_ViewStateOptimizer": this option used to configure the ViewStateKey for the hidden field on the client-side.
+* ViewStatePrefixValue = "_vso": this option used to configure the prefix value of value of the hidden field on the client-side.
+
+If you would like to configure your own above options for global asp.net application, you can do this in the __Application_Start__ event of asp.net.
+
+In case you would like to configure storing the ViewState data for the page-level without all pages, you have to add the following code into the code-behind of web forms page:
+```c#
+protected override PageStatePersister PageStatePersister
+{
+	get
+	{
+		return new FileViewStateOptimizer(Page);
+	}
+}
 ```
 
 ### Bugs and Issues

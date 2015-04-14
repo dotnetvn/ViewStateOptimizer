@@ -8,6 +8,10 @@
 	/// </summary>
 	public abstract class BaseViewStateOptimizer : PageStatePersister, IViewStateOptimizer
 	{
+		/// <summary>
+		/// Initializes a new instance of the ViewStateOptimizer.BaseViewStateOptimizer class.
+		/// </summary>
+		/// <param name="page">The System.Web.UI.Page that the view state persistence mechanism is created for.</param>
 		protected BaseViewStateOptimizer(Page page)
             : base(page)
         {

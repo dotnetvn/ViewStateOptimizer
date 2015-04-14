@@ -21,7 +21,7 @@
 			// --- Remove the *.vso files that store the ViewState contents.
 			foreach (string key in Session.Keys)
 			{
-				if(key.StartsWith(FileViewStateOptimizerOptions.ViewStatePrefixValue))
+				if (key.StartsWith(ViewStateOptimizerHelper.Section.FileViewStateOptimizerConfiguration.ViewStatePrefixValue))
 				{
 					var salt = Session[key].ToString();
 					var vsFile = Session[ViewStateOptimizerSecurity.GenerateHashStringBySalt(key, salt)].ToString();

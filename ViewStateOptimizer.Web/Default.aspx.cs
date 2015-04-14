@@ -39,6 +39,7 @@
 		{
 			if (!Page.IsPostBack)
 			{
+				var a = ViewStateOptimizerHelper.Section.StorageType;
 				gv1.DataSource = GetPersons("Persons1");
 				gv2.DataSource = GetPersons("Persons2");
 

@@ -11,6 +11,10 @@
 	/// </summary>
 	public class FileViewStateOptimizer : BaseViewStateOptimizer
 	{
+		/// <summary>
+		/// Initializes a new instance of the ViewStateOptimizer.FileViewStateOptimizer class.
+		/// </summary>
+		/// <param name="page">The System.Web.UI.Page that the view state persistence mechanism is created for.</param>
 		public FileViewStateOptimizer(Page page)
 			: base(page)
 		{
@@ -26,11 +30,11 @@
 			if (!Page.IsPostBack) return null;
 
 			// Get the hashed key from the form
-			string vsHashedKey = Page.Request.Form[FileViewStateOptimizerOptions.ViewStateKey];
+			string vsHashedKey = Page.Request.Form[ViewStateOptimizerHelper.Section.FileViewStateOptimizerConfiguration.ViewStateKey];
 
 			// Checks the existed the hashed key or not?
 			if (String.IsNullOrEmpty(vsHashedKey) ||
-				!vsHashedKey.StartsWith(FileViewStateOptimizerOptions.ViewStatePrefixValue))
+				!vsHashedKey.StartsWith(ViewStateOptimizerHelper.Section.FileViewStateOptimizerConfiguration.ViewStatePrefixValue))
 			{
 				throw new ViewStateException();
 			}
@@ -85,7 +89,7 @@
 						// --- End
 
 						// --- Create a new directory with the specified path if no exists.
-						var vsPath = Page.MapPath(FileViewStateOptimizerOptions.ViewStateStorageRelativeFolder);
+						var vsPath = Page.MapPath(ViewStateOptimizerHelper.Section.FileViewStateOptimizerConfiguration.ViewStateStorageRelativeFolder);
 						if (!Directory.Exists(vsPath))
 						{
 							Directory.CreateDirectory(vsPath);
@@ -94,7 +98,7 @@
 						// --- End
 
 						// --- Create new session based upon hash key to secure the viewstate contents
-						vsHashedKey = FileViewStateOptimizerOptions.ViewStatePrefixValue + "_" + Convert.ToBase64String(ViewStateOptimizerSecurity.GenerateHash(vsKey));
+						vsHashedKey = ViewStateOptimizerHelper.Section.FileViewStateOptimizerConfiguration.ViewStatePrefixValue + "_" + Convert.ToBase64String(ViewStateOptimizerSecurity.GenerateHash(vsKey));
 						salt = ViewStateOptimizerSecurity.GenerateSaltString(50);
 						Page.Session[vsHashedKey] = salt;
 						Page.Session[ViewStateOptimizerSecurity.GenerateHashStringBySalt(vsHashedKey, salt)] = vsFile;
@@ -103,7 +107,7 @@
 					else // For the postbacks later
 					{
 						// --- Gets the hashed key from the form
-						vsHashedKey = Page.Request.Form[FileViewStateOptimizerOptions.ViewStateKey];
+						vsHashedKey = Page.Request.Form[ViewStateOptimizerHelper.Section.FileViewStateOptimizerConfiguration.ViewStateKey];
 						if (String.IsNullOrEmpty(vsHashedKey))
 						{
 							throw new ViewStateException();
@@ -124,7 +128,7 @@
 					File.WriteAllText(vsFile, viewStateContents);
 
 					// Register a new hidden field to the client-side with the ViewState key and hashed key
-					Page.ClientScript.RegisterHiddenField(FileViewStateOptimizerOptions.ViewStateKey, vsHashedKey);
+					Page.ClientScript.RegisterHiddenField(ViewStateOptimizerHelper.Section.FileViewStateOptimizerConfiguration.ViewStateKey, vsHashedKey);
 
 					return true;
 				}

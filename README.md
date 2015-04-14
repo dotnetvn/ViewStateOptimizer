@@ -50,7 +50,7 @@ protected override PageStatePersister PageStatePersister
 	}
 }
 ```
-__**NOTE:**
+**NOTE:**
 
 Starting from the 1.0.1 version, we will have to configure above options via web.config instead of being inside code as before. This method helps us to avoid re-compiling the source code each times we make some changes to those options. We can configure the ViewStateOptimizer for the file storage with following codes:
 ```xml

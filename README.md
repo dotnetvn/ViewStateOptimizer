@@ -50,11 +50,33 @@ protected override PageStatePersister PageStatePersister
 	}
 }
 ```
+__**NOTE:**
+
+Starting from the 1.0.1 version, we will have to configure above options via web.config instead of being inside code as before. This method helps us to avoid re-compiling the source code each times we make some changes to those options. We can configure the ViewStateOptimizer for the file storage with following codes:
+```xml
+<configuration>
+	...
+	<configSections>
+		...
+		<section name="viewStateOptimizer" type="ViewStateOptimizer.ViewStateOptimizerConfigurationSection"/>
+		...
+	</configSections>
+	...
+	<viewStateOptimizer type="FileStorage">
+		<fileStorageViewStateOptimizer viewStateKey="_ViewStateOptimizer"  
+	viewStateStorageRelativeFolder="~/ViewStateOptimizer/VsFiles" viewStatePrefixValue="_vso"/>
+	</viewStateOptimizer>
+	...
+</configuration
+```
 
 ### Bugs and Issues
 If any issue or bug, please push a new issue [here](https://github.com/congdongdotnet/ViewStateOptimizer/issues).
 
 ### Release Notes
+* 1.0.1:
+    * Add the meaningful comments into code.
+    * Move the configurations programmatically to web.config.
 * 1.0.0:.
     * Optimize the ViewState performance by storing the ViewState contents in the files on the server-side.
     * Support the session page adapter for configuring the SessionPageStatePersister.

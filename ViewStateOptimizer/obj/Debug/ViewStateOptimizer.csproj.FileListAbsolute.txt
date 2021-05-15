@@ -1,9 +1,0 @@
-D:\projects\ViewStateOptimizer\ViewStateOptimizer\bin\Debug\ViewStateOptimizer.dll
-D:\projects\ViewStateOptimizer\ViewStateOptimizer\bin\Debug\ViewStateOptimizer.pdb
-D:\projects\ViewStateOptimizer\ViewStateOptimizer\obj\Debug\ViewStateOptimizer.dll
-D:\projects\ViewStateOptimizer\ViewStateOptimizer\obj\Debug\ViewStateOptimizer.pdb
-E:\projects\ViewStateOptimizer\ViewStateOptimizer\bin\Debug\ViewStateOptimizer.dll
-E:\projects\ViewStateOptimizer\ViewStateOptimizer\bin\Debug\ViewStateOptimizer.pdb
-E:\projects\ViewStateOptimizer\ViewStateOptimizer\obj\Debug\ViewStateOptimizer.dll
-E:\projects\ViewStateOptimizer\ViewStateOptimizer\obj\Debug\ViewStateOptimizer.pdb
-E:\projects\ViewStateOptimizer\ViewStateOptimizer\obj\Debug\ViewStateOptimizer.csprojResolveAssemblyReference.cache
